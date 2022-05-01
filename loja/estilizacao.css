@@ -1,0 +1,31 @@
+.teto {
+    text-align: center;
+    color: white;
+    background-color: black;
+ height: 50px;
+}
+*{
+ margin: 0px;
+}
+img {
+    width: 200px;
+    height: 100px;
+}
+
+body {
+background-image: url(https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+background-repeat: no-repeat;
+background-size: 100%;
+}
+h1 {
+    text-align: center;
+    color: aliceblue;
+}
+.i {
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;
+}
+.btn btn-primary {
+    width: 20000px;
+}
