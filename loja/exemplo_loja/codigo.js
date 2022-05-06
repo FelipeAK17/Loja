@@ -2,21 +2,7 @@ const chaveProdutos = 'PRODUTOS'; // key para uso no localstorage
 
 function cargaInicial() {
   var valores = [
-    {
-      url: 'https://media.istockphoto.com/photos/running-shoes-picture-id1249496770?k=20&m=1249496770&s=612x612&w=0&h=GR8ow3G0QWgkuhYPyEafoL5TMdAgzJvc7rxgOahqxO4=',
-      titulo: 'Tênis 1',
-      descricao: 'Tênis confortável para caminhada'
-    },
-    {
-      url: 'https://media.istockphoto.com/photos/sport-shoes-on-isolated-white-background-picture-id956501428?k=20&m=956501428&s=612x612&w=0&h=UC4qdZa2iA0PJvv0RIBlJDyF80wxFyLPq4YWvZa30Sc=',
-      titulo: 'Tênis 2',
-      descricao: 'Tênis confortável para corrida'
-    },
-    {
-      url: 'https://images.freeimages.com/images/small-previews/5af/sport-shoes-1417482.jpg',
-      titulo: 'Tênis 3',
-      descricao: 'Sapato esportivo'
-    }
+
   ];
 
   valores = JSON.stringify(valores); // converte o array em string pra salvar no localstorage
@@ -31,7 +17,7 @@ function mostraValores() {
   grid.innerHTML = '';
 
 
-  valores.forEach((valor) => { // para cara registro no array executa o processo abaixo
+  valores.forEach((valor) => { // para cada registro no array executa o processo abaixo
     const divCard = document.createElement('div'); // cria uma div
     divCard.className = 'card col'; // insere a classe do bootstrap
     divCard.setAttribute('style', 'width: 18rem');
@@ -47,14 +33,19 @@ function mostraValores() {
     h5.className = 'card-title';
     h5.innerHTML = valor.titulo; // adiciona o conteudo entre a abertura e fechamento da tag
 
-    const p = document.createElement('p');
-    p.className = 'card-text';
-    p.innerHTML = valor.descricao;
+    const p1 = document.createElement('p');
+    p1.className = 'card-text';
+    p1.innerHTML = valor.preco;
+
+    const p2 = document.createElement('p');
+    p2.className = 'card-text';
+    p2.innerHTML = valor.descricao;
 
     divCard.appendChild(img); // insere a img dentro da divCard
     divCard.appendChild(divCardBody);
     divCardBody.appendChild(h5);
-    divCardBody.appendChild(p);
+    divCardBody.appendChild(p1);
+    divCardBody.appendChild(p2);
 
     const grid = document.getElementById('grid');
   
@@ -64,12 +55,14 @@ function mostraValores() {
 
 function cadastrar() {
   
-  var titulo = document.getElementById('titulo').value;
+  var titulo = document.getElementById('nome').value;
+  var preco = document.getElementById('preco').value;
   var descricao = document.getElementById('descricao').value;
   var url = document.getElementById('url').value;
 
   const produto = {
     titulo,
+    preco,
     descricao,
     url,
   }
@@ -91,3 +84,30 @@ function cadastrar() {
 
 // cargaInicial() // carrega valores iniciais no localstorage
 // mostraValores() // renderiza os produtos no documento
+
+function checkInputs(inputs) {
+  var filled = true;
+  
+  inputs.forEach(function(label) {
+      
+    if(label.value === "") {
+        filled = false;
+    }
+  
+  });
+  
+  return filled;
+  
+}
+var inputs = document.querySelectorAll("input");
+var button = document.querySelector("button");
+inputs.forEach(function(input) {
+    
+  input.addEventListener("keyup", function() {
+    if(checkInputs(inputs)) {
+      button.button = false;
+    } else {
+      button.button = true;
+    }
+  });
+});

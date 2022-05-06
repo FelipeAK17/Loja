@@ -1,0 +1,84 @@
+body {
+    background-size: cover;
+}
+
+#a {
+
+    display: flex;
+    justify-content: center;
+
+}
+
+.button5 {
+    background-color: #555555;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.button4 {
+    background-color: blueviolet;
+    display: flex;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 20px;
+
+}
+
+
+
+h1 {
+    color: white;
+    display: flex;
+    justify-content: center;
+
+}
+
+.button6 {
+    background-color: red;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 20px;
+
+}
+
+#c {
+    color: black;
+}
+
+#f {
+
+    color: white;
+    text-align: center;
+    position: absolute;
+    top: 30%;
+    left: 45%;
+}
+
+#o {
+
+    border-radius: 20%;
+    background-color: black;
+    color: white;
+
+}
+
+
